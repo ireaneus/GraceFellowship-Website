@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2 id="topic"></h2>
+    <h3 id="book"></h3>
+    <p id="path"></p>
+    <p id="part"></p>
+    <p id="demo"></p>
+
+    <script>
+        const myJSON = '{"topic":"New Testament", "book":"Hebrews", "path":"sermons/", "files":["hebrews_part1.mp3", "hebrews_part2.mp3", "hebrews_part3.mp3"]}';
+        const myObj = JSON.parse(myJSON);
+
+        let text = "";
+        for (let i in myObj.files) {
+            text += myObj.files[i] + ", ";
+        };
+
+        document.getElementById("part").innerHTML = myObj.files[0];
+        document.getElementById("demo").innerHTML = text;
+        document.getElementById("topic").innerHTML = myObj.topic;
+        document.getElementById("book").innerHTML = myObj.book;
+        document.getElementById("path").innerHTML = myObj.path;
+    </script>
+</body>
+
+</html>

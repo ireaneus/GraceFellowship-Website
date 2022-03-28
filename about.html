@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Grace Fellowship of Mountain Home Idaho - About</title>
+    <meta name="author" content="David Haines">
+    <meta name "keywords" content="Mountain Home, Idaho, Calvinism, Grace, Predestination, Church, MP3, PDF, John Piper, Sovereignity, Verse by Verse">
+    <meta name="description" content="Local Mountain Home Church preaching the Gospel of Jesus Christ according to the written Word of God.">
+    <meta name="ROBOTS" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Courgette&family=PT+Sans&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+
+    <!-- Font Awesome -->
+
+    <script src="https://kit.fontawesome.com/449937cf9c.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Whole panel main page-->
+    <div class="w3-auto w3-card-4" style="background-color: white;">
+
+
+        <!-- TopBar Section -->
+        <div class="w3-top w3-auto w3-card-4">
+            <div class="w3-bar w3-theme-d1">
+
+                <button href="#" class="w3-button w3-right w3-hover-blue-grey">
+          <!-- ########### This is for the Current date ################# -->
+            <script language="javascript">
+        
+            // Array of day names
+            var dayNames = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+            var monthNames = new Array("January","February","March","April","May","June","July",
+                                  "August","September","October","November","December");
+            var dt = new Date();
+            var y  = dt.getYear();
+            // Y2K compliant
+            if (y < 1000) y +=1900;
+            document.write(dayNames[dt.getDay()] + ", " + monthNames[dt.getMonth()] + " " + dt.getDate() + ", " + y);
+            // -->
+            </script></button>
+                <a href="index.html" class="w3-button w3-right w3-hover-blue-grey">Home</a>
+                <h6 class="w3-wide w3-center white" style="text-shadow:1px 1px 0 #444; margin: 3px 0 0;">Grace Fellowship of Mountain Home Idaho - Resurrected</h6>
+            </div>
+        </div>
+
+        <!-- About the Church Family -->
+        <div class="w3-row  w3-padding-64">
+            <div class="w3-container w3-col w3-mobile" style="max-width: 480px;">
+                <img src="images/churchus.jpg" class="rcorners" title="Our church body">
+            </div>
+
+            <div class="w3-container w3-rest w3-mobile">
+                <h4>About our Church</h4>
+                <p>Grace Fellowship of Mountain Home is a body of believers in Jesus Christ who are joined together for the worship, service, prayer, fellowship, discipleship, evangelism and for the observance of the ordinances of baptism and the Lord's
+                    supper as set forth in the Bible.</p>
+
+                <p>Come and enjoy the worship of God with us at Grace Fellowship and the warm fellowship of our members as we worship our Lord Jesus Christ in song, in prayer and in the Word of God.&nbsp;&nbsp;How you dress and what you give is of secondary
+                    importance to us.&nbsp;&nbsp;But there is one thing we do ask you to do.</p>
+                <p align="center">PLEASE BRING YOUR BIBLE!</p>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/mp3tag.js@latest/dist/mp3tag.min.js"></script>
+
+        <input type="file" id="input-file" accept="audio/mpeg">
+        <script>
+            const inputFile = document.getElementById('input-file')
+            inputFile.onchange = function() {
+                const reader = new FileReader()
+                reader.onload = function() {
+                    const buffer = this.result
+
+                    // MP3Tag Usage
+                    const mp3tag = new MP3Tag(buffer)
+                    mp3tag.read()
+                    console.log(mp3tag.tags)
+                }
+
+                if (this.files.length > 0) {
+                    reader.readAsArrayBuffer(this.files[0])
+                }
+            }
+        </script>
+
+
+        <!-- Footer Section -->
+        <div class="w3-row">
+            <div class="w3-container w3-card-4 w3-theme-d1">
+                <p align="center" class="scripture">Let us hold fast the confession of our hope without wavering, for He who promised is faithful; and let us consider how to stimulate one another to love and good deeds, not forsaken our own assembling together, as is the habit of some,
+                    but encouraging one another; and all the more, as you see the day drawing near.</p>
+                <p align="center">Hebrews 10:23-25</p>
+            </div>
+        </div>
+
+        <!--Whole panel main page-->
+
+    </div>
+
+</body>
+
+</html>
