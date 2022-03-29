@@ -3581,8 +3581,14 @@
         };
 
         //date
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
         const d = new Date();
-        document.getElementById("date").innerHTML = d.toDateString();
+        document.getElementById("date").innerHTML = d.toLocaleDateString("en-US", options);
 
         // Accordion drop list - Testament
         function myAccFunc(id) {
