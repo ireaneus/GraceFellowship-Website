@@ -1,23 +1,41 @@
-const sermons = {
-    topic: "New Testament",
-    path: "sermons/",
-    book: [
-        { name: "Hebrews", files: ["hebrews_part1.mp3", "hebrews_part2.mp3", "hebrews_part3.mp3"] },
-        { name: "1Corinthians", files: ["1cor_part1.mp3", "1cor_part2.mp3", "1cor_part3.mp3"] }
-    ]
-};
+//jshint esversion:6
 
-for (let h in sermons) {
-    let sermon = sermons[h];
-    for (let i in sermon.book) {
-        let book = sermon.book[i];
-        x += "<h3>" + book.name + "</h3>";
-        for (let j in book.files) {
-            x += "<a href=" + sermon.path + book.name + "/" + book.files[j] + ">" + book.files[j] + "</a><br>";
-        }
-    }
-};
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const _ = require("lodash");
 
-document.getElementById("topic").innerHTML = sermons.topic;
-document.getElementById("book").innerHTML = x;
-document.getElementById("path").innerHTML = sermons.path;
+const app = express();
+
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
+// Mongoose connect, schema, and model section
+mongoose.connect("mongodb+srv://bwDave:TheRockCriesOut5@sermons0.ikt0p.mongodb.net/sermonsDB");
+
+const jsmediatags = require("jsmediatags");
+
+jsmediatags.read("sermons/1cor/1corinthians-part3.mp3", {
+  onSuccess: function(tag) {
+    var tags = tag.tags;
+    console.log(tags.title + " - " + tags.artist + " - " + tags.album + " - " + tags.year + " - " + tags.comment.text);
+  }
+});
+
+const sermonsSchema = new mongoose.Schema({
+    title: tags.title,
+    artist: tags.ara
+
+})
+
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 3000;
+}
+
+app.listen(process.env.PORT || 3000, function() {
+    console.log("Server is running on port 3000");
+});
