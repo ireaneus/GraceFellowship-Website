@@ -28,15 +28,15 @@ const sermonsSchema = new mongoose.Schema({
 
 const Sermon = mongoose.model("Sermon", sermonsSchema);
 
-/*
+
 const booksSchema = new mongoose.Schema({
   topic: String,
   book: String,
-  path: "sermons/" + String
+  path: String
 });
 
 const Book = mongoose.model("Book", booksSchema);
-*/
+
 
 jsmediatags.read("sermons/1cor/1corinthians-part3.mp3", {
     onSuccess: function(tag) {
@@ -52,7 +52,7 @@ jsmediatags.read("sermons/1cor/1corinthians-part3.mp3", {
         comment: tags.comment.text
       });
 
-      file.save();
+      // file.save();
 
     },
     onError: function(error) {
