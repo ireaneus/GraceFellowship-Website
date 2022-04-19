@@ -1,0 +1,27 @@
+{
+  "name": "gracefellowship-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "jsmediatags": "^3.9.7",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ireaneus/GraceFellowship-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ireaneus/GraceFellowship-Website/issues"
+  },
+  "homepage": "https://github.com/ireaneus/GraceFellowship-Website#readme"
+}
