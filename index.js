@@ -17,8 +17,8 @@ app.use(express.static("public"));
 // Mongoose connect, schema, and model section
 mongoose.connect("mongodb+srv://bwDave:TheRockCriesOut5@sermons0.ikt0p.mongodb.net/sermonsDB");
 
+
 const sermonsSchema = new mongoose.Schema({
-  _id: Number,
   title: String,
   artist: String,
   album: String,
@@ -30,6 +30,7 @@ const Sermon = mongoose.model("Sermon", sermonsSchema);
 
 
 const booksSchema = new mongoose.Schema({
+  _id: Number,
   topic: String,
   book: String,
   path: String
@@ -38,30 +39,26 @@ const booksSchema = new mongoose.Schema({
 const Book = mongoose.model("Book", booksSchema);
 
 
-jsmediatags.read("sermons/1cor/1corinthians-part3.mp3", {
-    onSuccess: function(tag) {
-      var tags = tag.tags;
-      console.log(tags.title + " - " + tags.artist + " - " + tags.album + " - " + tags.year + " - " + tags.comment.text);
+jsmediatags.read("sermons/1cor/1corinthians-part4.mp3", {
+  onSuccess: function(tag) {
+    var tags = tag.tags;
+    console.log(tags.title + " - " + tags.artist + " - " + tags.album + " - " + tags.year + " - " + tags.comment);
 
-      const file = new Sermon({
-        _id: 1,
-        title: tags.title,
-        artist: tags.artist,
-        album: tags.album,
-        year: tags.year,
-        comment: tags.comment.text
-      });
+    const sermon = new Sermon({
+      title: tags.title,
+      artist: tags.artist,
+      album: tags.album,
+      year: tags.year,
+      comment: tags.comment
+    });
 
-      // file.save();
+    sermon.save();
 
-    },
-    onError: function(error) {
-      console.log(':(', error.type, error.info);
-    }
-  });
-
-
-
+  },
+  onError: function(error) {
+    console.log(':(', error.type, error.info);
+  }
+});
 
 
 let port = process.env.PORT;
