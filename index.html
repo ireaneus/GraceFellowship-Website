@@ -36,13 +36,12 @@
 
 
         <!-- TopBar Section -->
-        <div class="w3-top w3-auto w3-card-4">
-            <div class="w3-bar w3-theme-d1">
+        <div class="w3-top w3-auto w3-card-4 w3-theme-d1">
+            <div class="w3-display-container ">
 
-                <button class="w3-button w3-left w3-hover-blue-grey" onclick="w3_open()"><i class="fas fa-church"></i></button>
-                <button id="date" class="w3-button w3-right w3-hover-blue-grey"></button>
-                <a href="about.html" class="w3-button w3-right w3-hover-blue-grey">About</a>
-                <h6 class="w3-wide w3-center white" style="text-shadow:1px 1px 0 #444; margin: 3px 0 0;">Grace Fellowship of Mountain Home Idaho - Resurrected</h6>
+                <button class="w3-button w3-display-left w3-hover-blue-grey" onclick="w3_open()"><i class="fas fa-church"></i></button>
+                <button id="date" class="w3-button w3-display-right w3-hover-blue-grey w3-hide-small"></button>
+                <h6 class="w3-wide w3-display-center white" >Grace Fellowship of Mountain Home Idaho - Resurrected</h6>
             </div>
         </div>
 
@@ -50,6 +49,7 @@
         <!-- Sidebar Section -->
         <div class="w3-sidebar w3-theme-l4 w3-auto w3-card-4" id="mySidebar" style="display: none;">
             <button onclick="w3_close()" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></button>
+            
             <h4 class="w3-card-item">Sermon List</h4>
 
 
@@ -3498,6 +3498,7 @@
             </div>
             <!-- Worship Series closing -->
 
+            <button style.display="block" class="w3-button we-block w3-left-align w3-hover-blue-grey"><a href="about.html">ABOUT GRACE</a></button>
 
         </div>
         <!-- Sidebar closing -->
@@ -3524,7 +3525,8 @@
                 <p class="scripture w3-center">Dedicated to the memory of Pastor Jack Hurley</p>
                 <p>After 15 years of being offline this website is being <i>"Resurrected"</i></p>
 
-                <p>It is time to dust off your Bibles, and get back into the Word of God.&nbsp;&nbsp; I've spent over a year remastering the tapes, there are several new additions books of the Bible, topical, and prophecy teachings spanning from 1984 to 2004
+                <p>It is time to dust off your Bibles, and get back into the Word of God.&nbsp;&nbsp; I've spent over a year remastering the tapes, there are several new additions books of the Bible, topical, and prophecy teachings spanning from 1984 to
+                    2004
                 </p>
 
                 <h6>Check out the extensive sermon series from Pastor Jack using the <i class="fas fa-church"></i> icon in the upper left corner</h6>
@@ -3581,9 +3583,9 @@
 
         //date
         const options = {
-            weekday: 'long',
+            weekday: 'short',
             year: 'numeric',
-            month: 'long',
+            month: 'short',
             day: 'numeric'
         };
         const d = new Date();
